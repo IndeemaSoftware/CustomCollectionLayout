@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol ColectionViewSelectableItemDelegate: class, UICollectionViewDelegateFlowLayout {
+protocol CollectionViewSelectableItemDelegate: class, UICollectionViewDelegateFlowLayout {
     var didSelectItem: ((_ indexPath: IndexPath) -> Void)? { get set }
 }
 
-class DefaultCollectionViewDelegate: NSObject, ColectionViewSelectableItemDelegate {
+class DefaultCollectionViewDelegate: NSObject, CollectionViewSelectableItemDelegate {
     var didSelectItem: ((_ indexPath: IndexPath) -> Void)?
     let sectionInsets = UIEdgeInsets(top: 16.0, left: 16.0, bottom: 20.0, right: 16.0)
     

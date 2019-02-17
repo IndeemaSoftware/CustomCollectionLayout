@@ -26,8 +26,8 @@ class FruitsViewController: UICollectionViewController {
     private var selectedStyle: PresentationStyle = .table {
         didSet { updatePresentationStyle() }
     }
-    private var styleDelegates: [PresentationStyle: ColectionViewSelectableItemDelegate] = {
-        let result: [PresentationStyle: ColectionViewSelectableItemDelegate] = [
+    private var styleDelegates: [PresentationStyle: CollectionViewSelectableItemDelegate] = {
+        let result: [PresentationStyle: CollectionViewSelectableItemDelegate] = [
             .table: TabledContentCollectionViewDelegate(),
             .defaultGrid: DefaultGriddedContentCollectionViewDelegate(),
             .customGrid: CustomGriddedContentCollectionViewDelegate(),
