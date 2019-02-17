@@ -13,39 +13,59 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FruitCollectionViewCell" customModule="CustomCollectionLayout" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="183" height="166"/>
+            <rect key="frame" x="0.0" y="0.0" width="539" height="269"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="183" height="166"/>
+                <rect key="frame" x="0.0" y="0.0" width="539" height="269"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="McP-64-bpl">
-                        <rect key="frame" x="10" y="4" width="163" height="133"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RQ-W2-wpp">
-                        <rect key="frame" x="10" y="141" width="163" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VL1-CF-LAz">
+                        <rect key="frame" x="0.0" y="0.0" width="539" height="269"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="XcS-Ai-uTM">
+                                <rect key="frame" x="4" y="4" width="531" height="261"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gH3-QQ-syq">
+                                        <rect key="frame" x="0.0" y="0.0" width="266.5" height="261"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="gH3-QQ-syq" secondAttribute="height" multiplier="1:1" priority="750" id="Zhd-Vf-K7H"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSy-kz-WR8">
+                                        <rect key="frame" x="282.5" y="0.0" width="248.5" height="261"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.25882352941176467" green="0.2627450980392157" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XcS-Ai-uTM" firstAttribute="top" secondItem="VL1-CF-LAz" secondAttribute="top" constant="4" id="cDk-Qb-DeZ"/>
+                            <constraint firstAttribute="trailing" secondItem="XcS-Ai-uTM" secondAttribute="trailing" constant="4" id="hcf-eX-Q2k"/>
+                            <constraint firstItem="XcS-Ai-uTM" firstAttribute="leading" secondItem="VL1-CF-LAz" secondAttribute="leading" constant="4" id="jdx-ex-9bq"/>
+                            <constraint firstAttribute="bottom" secondItem="XcS-Ai-uTM" secondAttribute="bottom" constant="4" id="pdb-XU-pXk"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="McP-64-bpl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="E94-XP-oB8"/>
-                <constraint firstAttribute="trailing" secondItem="McP-64-bpl" secondAttribute="trailing" constant="10" id="Nlh-zF-BtV"/>
-                <constraint firstAttribute="bottom" secondItem="7RQ-W2-wpp" secondAttribute="bottom" constant="4" id="PQr-Zy-fCo"/>
-                <constraint firstItem="7RQ-W2-wpp" firstAttribute="top" secondItem="McP-64-bpl" secondAttribute="bottom" constant="4" id="TLC-j5-pWL"/>
-                <constraint firstAttribute="trailing" secondItem="7RQ-W2-wpp" secondAttribute="trailing" constant="10" id="Z2s-Hz-C75"/>
-                <constraint firstItem="McP-64-bpl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="fRt-f0-Zp8"/>
-                <constraint firstItem="7RQ-W2-wpp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="u56-Ug-erg"/>
+                <constraint firstItem="VL1-CF-LAz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5eW-gH-sQ8"/>
+                <constraint firstItem="VL1-CF-LAz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Nx7-Js-C00"/>
+                <constraint firstAttribute="bottom" secondItem="VL1-CF-LAz" secondAttribute="bottom" id="Zaz-Ri-njc"/>
+                <constraint firstAttribute="trailing" secondItem="VL1-CF-LAz" secondAttribute="trailing" id="zxv-eS-yM5"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="183" height="166"/>
+            <size key="customSize" width="539" height="269"/>
             <connections>
-                <outlet property="ibImageView" destination="McP-64-bpl" id="aKo-Ly-yJi"/>
-                <outlet property="ibLabel" destination="7RQ-W2-wpp" id="wcl-cD-KA3"/>
+                <outlet property="ibImageView" destination="gH3-QQ-syq" id="zEI-VJ-6bw"/>
+                <outlet property="ibLabel" destination="RSy-kz-WR8" id="g2g-g6-j8l"/>
+                <outlet property="stackView" destination="XcS-Ai-uTM" id="gLh-Td-PpZ"/>
             </connections>
-            <point key="canvasLocation" x="239.19999999999999" y="206.89655172413794"/>
+            <point key="canvasLocation" x="205.59999999999999" y="271.21439280359823"/>
         </collectionViewCell>
     </objects>
 </document>

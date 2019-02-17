@@ -9,23 +9,64 @@
 import UIKit
 
 class FruitsViewController: UICollectionViewController {
-
-    private var datasource: [Fruit] = []
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.collectionView?.register(FruitCollectionViewCell.nib,
-                                      forCellWithReuseIdentifier: FruitCollectionViewCell.reuseID)
-        generateDatasource()
+    private enum PresentationStyle: String, CaseIterable {
+        case table
+        case defaultGrid
+        case customGrid
+        
+        var buttonImage: UIImage {
+            switch self {
+            case .table: return #imageLiteral(resourceName: "table")
+            case .defaultGrid: return #imageLiteral(resourceName: "default_grid")
+            case .customGrid: return #imageLiteral(resourceName: "custom_grid")
+            }
+        }
     }
     
-    private func generateDatasource() {
-        for index in 1...20 {
-            let imageName = String(index % 5 + 1)
-            let fruit = Fruit(name: String(index), icon: UIImage())
-            datasource.append(fruit)
+    private var selectedStyle: PresentationStyle = .table {
+        didSet { updatePresentationStyle() }
+    }
+    private var styleDelegates: [PresentationStyle: ColectionViewSelectableItemDelegate] = {
+        let result: [PresentationStyle: ColectionViewSelectableItemDelegate] = [
+            .table: TabledContentCollectionViewDelegate(),
+            .defaultGrid: DefaultGriddedContentCollectionViewDelegate(),
+            .customGrid: CustomGriddedContentCollectionViewDelegate(),
+        ]
+        result.values.forEach {
+            $0.didSelectItem = { _ in
+                print("Item selected")
+            }
         }
-        collectionView?.reloadData()
+        return result
+    }()
+    
+    private var datasource: [Fruit] = FruitsProvider.get()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.collectionView.register(FruitCollectionViewCell.nib,
+                                      forCellWithReuseIdentifier: FruitCollectionViewCell.reuseID)
+        collectionView.contentInset = .zero
+        updatePresentationStyle()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: selectedStyle.buttonImage, style: .plain, target: self, action: #selector(changeContentLayout))
+    }
+    
+    private func updatePresentationStyle() {
+        collectionView.delegate = styleDelegates[selectedStyle]
+        collectionView.performBatchUpdates({
+            collectionView.reloadData()
+        }, completion: nil)
+
+        navigationItem.rightBarButtonItem?.image = selectedStyle.buttonImage
+    }
+    
+    @objc private func changeContentLayout() {
+        let allCases = PresentationStyle.allCases
+        guard let index = allCases.firstIndex(of: selectedStyle) else { return }
+        let nextIndex = (index + 1) % allCases.count
+        selectedStyle = allCases[nextIndex]
+        
     }
 }
 
@@ -44,15 +85,4 @@ extension FruitsViewController {
         cell.update(title: fruit.name, image: fruit.icon)
         return cell
     }
-        
-    override func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath)
-        cell?.backgroundColor = UIColor.purple
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath)
-        cell?.backgroundColor = UIColor.lightGray
-    }
-
 }

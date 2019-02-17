@@ -15,6 +15,11 @@
 		830AA7AF221485CE0097B6F1 /* FruitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830AA7AD221485CE0097B6F1 /* FruitCollectionViewCell.swift */; };
 		830AA7B0221485CE0097B6F1 /* FruitCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 830AA7AE221485CE0097B6F1 /* FruitCollectionViewCell.xib */; };
 		830AA7B2221486180097B6F1 /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830AA7B1221486180097B6F1 /* Fruit.swift */; };
+		830AA7DD221857EE0097B6F1 /* TabledContentCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830AA7DA221857ED0097B6F1 /* TabledContentCollectionViewDelegate.swift */; };
+		830AA7DE221857EE0097B6F1 /* CustomGriddedContentCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830AA7DB221857EE0097B6F1 /* CustomGriddedContentCollectionViewDelegate.swift */; };
+		830AA7DF221857EE0097B6F1 /* DefaultCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830AA7DC221857EE0097B6F1 /* DefaultCollectionViewDelegate.swift */; };
+		83C945D4221955C600C5401C /* FruitsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C945D3221955C600C5401C /* FruitsProvider.swift */; };
+		83C945D62219B9A700C5401C /* DefaultGriddedContentCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C945D52219B9A700C5401C /* DefaultGriddedContentCollectionViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		830AA7AD221485CE0097B6F1 /* FruitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitCollectionViewCell.swift; sourceTree = "<group>"; };
 		830AA7AE221485CE0097B6F1 /* FruitCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FruitCollectionViewCell.xib; sourceTree = "<group>"; };
 		830AA7B1221486180097B6F1 /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
+		830AA7DA221857ED0097B6F1 /* TabledContentCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabledContentCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		830AA7DB221857EE0097B6F1 /* CustomGriddedContentCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomGriddedContentCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		830AA7DC221857EE0097B6F1 /* DefaultCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		83C945D3221955C600C5401C /* FruitsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsProvider.swift; sourceTree = "<group>"; };
+		83C945D52219B9A700C5401C /* DefaultGriddedContentCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGriddedContentCollectionViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +70,9 @@
 		830AA798221484740097B6F1 /* CustomCollectionLayout */ = {
 			isa = PBXGroup;
 			children = (
+				830AA7D5221853A30097B6F1 /* Entities */,
 				830AA7B3221487D30097B6F1 /* FruitCollectionCell */,
-				830AA7B1221486180097B6F1 /* Fruit.swift */,
+				830AA7D9221857ED0097B6F1 /* Collection FlowLayouts */,
 				830AA7AB221485720097B6F1 /* FruitsViewController.swift */,
 				830AA79D221484740097B6F1 /* Main.storyboard */,
 				830AA7B4221487ED0097B6F1 /* Supporting Files */,
@@ -87,6 +98,26 @@
 				830AA7A5221484770097B6F1 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		830AA7D5221853A30097B6F1 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				830AA7B1221486180097B6F1 /* Fruit.swift */,
+				83C945D3221955C600C5401C /* FruitsProvider.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		830AA7D9221857ED0097B6F1 /* Collection FlowLayouts */ = {
+			isa = PBXGroup;
+			children = (
+				830AA7DC221857EE0097B6F1 /* DefaultCollectionViewDelegate.swift */,
+				830AA7DA221857ED0097B6F1 /* TabledContentCollectionViewDelegate.swift */,
+				83C945D52219B9A700C5401C /* DefaultGriddedContentCollectionViewDelegate.swift */,
+				830AA7DB221857EE0097B6F1 /* CustomGriddedContentCollectionViewDelegate.swift */,
+			);
+			path = "Collection FlowLayouts";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,10 +192,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				830AA7DD221857EE0097B6F1 /* TabledContentCollectionViewDelegate.swift in Sources */,
+				830AA7DF221857EE0097B6F1 /* DefaultCollectionViewDelegate.swift in Sources */,
+				830AA7DE221857EE0097B6F1 /* CustomGriddedContentCollectionViewDelegate.swift in Sources */,
 				830AA7B2221486180097B6F1 /* Fruit.swift in Sources */,
 				830AA7AF221485CE0097B6F1 /* FruitCollectionViewCell.swift in Sources */,
 				830AA7AC221485720097B6F1 /* FruitsViewController.swift in Sources */,
 				830AA79A221484740097B6F1 /* AppDelegate.swift in Sources */,
+				83C945D62219B9A700C5401C /* DefaultGriddedContentCollectionViewDelegate.swift in Sources */,
+				83C945D4221955C600C5401C /* FruitsProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
